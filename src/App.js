@@ -1,29 +1,21 @@
 import React, { Component } from 'react';
-
 import Timer from './Timer'
 
 class App extends Component {
-
-  //no props being used here, so we can use the shorthand declaration of state
-  state = {
-    timerIDs: []
+  constructor(props){
+    super(props);
+    this.state = {
+      timerIDs: []
+    };
   }
 
+  //Your code here: component to add an initial timer
+componentDidMount() {
+  this.handleAddTimer();
 
-  //Your code here:
+}
 
-
-
-
-
-
-
-
-
-  // No need to modify anything in render or the class methods below
-  // Unless, of course, you're curious about how it all works
   render() {
-
     return (
       <div className="App">
         <h1>MultiTimer</h1>
@@ -53,8 +45,8 @@ class App extends Component {
   removeTimer = id => {
     this.setState(prevState => ({
       timerIDs: prevState.timerIDs.filter(timer_id => timer_id !== id)
-    }))
-  }
+    }));
+  };
 
 
 }
